@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = si.eclectic.psyhub.\
+    config.SqlTestContainersSpringContextCustomizerFactory
