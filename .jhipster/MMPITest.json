@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20240211145449"
+  },
+  "applications": "*",
+  "entityTableName": "mmpi_test",
+  "fields": [
+    {
+      "fieldName": "order",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "MMPITest",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "mMPITest",
+      "relationshipName": "client",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "mMPIAnswer",
+      "otherEntityRelationshipName": "mMPITest",
+      "relationshipName": "mMPIAnswer",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20240211150149"
+  },
+  "applications": "*",
+  "entityTableName": "currency",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Currency",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "sessionBill",
+      "otherEntityRelationshipName": "currency",
+      "relationshipName": "sessionBill",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

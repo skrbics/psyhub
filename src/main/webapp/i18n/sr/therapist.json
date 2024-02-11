@@ -1,0 +1,28 @@
+{
+  "psyhubApp": {
+    "therapist": {
+      "home": {
+        "title": "Therapists",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Therapist",
+        "createOrEditLabel": "Kreirajte ili izmenite Therapist",
+        "notFound": "No Therapists found"
+      },
+      "created": "Kreiran je novi Therapist pod nazivom {{ param }}",
+      "updated": "Therapist pod nazivom {{ param }} je ažuriran",
+      "deleted": "Therapist pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Therapist pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Therapist"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "userid": "Userid",
+      "office": "Office"
+    }
+  }
+}

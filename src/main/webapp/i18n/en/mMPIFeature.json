@@ -1,0 +1,25 @@
+{
+  "psyhubApp": {
+    "mMPIFeature": {
+      "home": {
+        "title": "MMPI Features",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new MMPI Feature",
+        "createOrEditLabel": "Create or edit a MMPI Feature",
+        "notFound": "No MMPI Features found"
+      },
+      "created": "A new MMPI Feature is created with identifier {{ param }}",
+      "updated": "A MMPI Feature is updated with identifier {{ param }}",
+      "deleted": "A MMPI Feature is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete MMPI Feature {{ id }}?"
+      },
+      "detail": {
+        "title": "MMPI Feature"
+      },
+      "id": "ID",
+      "name": "Name",
+      "mMPITestCardFeature": "M MPI Test Card Feature"
+    }
+  }
+}

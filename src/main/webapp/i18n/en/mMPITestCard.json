@@ -1,0 +1,26 @@
+{
+  "psyhubApp": {
+    "mMPITestCard": {
+      "home": {
+        "title": "MMPI Test Cards",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new MMPI Test Card",
+        "createOrEditLabel": "Create or edit a MMPI Test Card",
+        "notFound": "No MMPI Test Cards found"
+      },
+      "created": "A new MMPI Test Card is created with identifier {{ param }}",
+      "updated": "A MMPI Test Card is updated with identifier {{ param }}",
+      "deleted": "A MMPI Test Card is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete MMPI Test Card {{ id }}?"
+      },
+      "detail": {
+        "title": "MMPI Test Card"
+      },
+      "id": "ID",
+      "question": "Question",
+      "mMPIAnswer": "M MPI Answer",
+      "mMPITestCardFeature": "M MPI Test Card Feature"
+    }
+  }
+}

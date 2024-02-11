@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240211145649"
+  },
+  "applications": "*",
+  "entityTableName": "mmpi_test_card",
+  "fields": [
+    {
+      "fieldName": "question",
+      "fieldType": "String"
+    }
+  ],
+  "name": "MMPITestCard",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "mMPIAnswer",
+      "otherEntityRelationshipName": "mMPITestCard",
+      "relationshipName": "mMPIAnswer",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "mMPITestCardFeature",
+      "otherEntityRelationshipName": "mMPITestCard",
+      "relationshipName": "mMPITestCardFeature",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,118 @@
+entity Therapist {
+  firstName String
+  middleName String
+  lastName String
+  userid String
+}
+
+entity Client {
+  firstName String
+  middleName String
+  lastName String
+  email String
+  phone String
+}
+
+entity Address {
+  street String
+  houseNo String
+}
+
+entity Office {
+  officeName String
+  website String
+  email String
+  phone String
+}
+
+entity Session {
+  date LocalDate
+  location String
+  notes String
+  completed Boolean
+}
+
+entity SessionBill {
+	amount Double
+    paid Boolean
+}
+
+entity MMPITest {
+	order Integer
+    date LocalDate
+}
+
+entity MMPITestCardFeature {
+	answerYes Boolean
+}
+
+entity MMPITestCard {
+	question String
+}
+
+entity MMPIFeature {
+	name String
+}
+
+entity MMPIAnswer {
+	answeredYes Boolean
+}
+
+entity Country {
+  name String
+  abbreviation String
+}
+
+entity City {
+  name String
+  zip String
+}
+
+entity Currency {
+	name String
+    code String
+}
+
+relationship ManyToOne {
+    Address to City
+    Address to Country
+    Therapist to Office
+    SessionBill to Currency
+    Session to Client    
+    MMPITest to Client
+    MMPIAnswer to MMPITest
+    MMPIAnswer to MMPITestCard
+    MMPITestCardFeature to MMPITestCard
+    MMPITestCardFeature to MMPIFeature
+}
+
+relationship OneToMany {
+    City to Address
+    Country to Address
+    Office to Therapist
+    Currency to SessionBill
+    Client to Session
+    Client to MMPITest
+    MMPITest to MMPIAnswer
+    MMPITestCard to MMPIAnswer
+    MMPITestCard to MMPITestCardFeature
+    MMPIFeature to MMPITestCardFeature
+}
+
+relationship OneToOne {
+	Client to Address
+    Office to Address
+    Session to SessionBill
+}
+
+// Set pagination options
+paginate Client, City, Country, Currency, Therapist, Address, Office, Session, SessionBill, MMPITest, MMPITestCardFeature, MMPITestCard, MMPIFeature, MMPIAnswer with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

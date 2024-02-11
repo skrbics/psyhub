@@ -1,0 +1,131 @@
+<div>
+  <h2 id="page-heading" data-cy="MMPIAnswerHeading">
+    <span jhiTranslate="psyhubApp.mMPIAnswer.home.title">MMPI Answers</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="psyhubApp.mMPIAnswer.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-mmpi-answer"
+        [routerLink]="['/mmpi-answer/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="psyhubApp.mMPIAnswer.home.createLabel">Create a new MMPI Answer</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (mMPIAnswers?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="psyhubApp.mMPIAnswer.home.notFound">No MMPI Answers found</span>
+    </div>
+  }
+
+  @if (mMPIAnswers && mMPIAnswers.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="answeredYes">
+              <div class="d-flex">
+                <span jhiTranslate="psyhubApp.mMPIAnswer.answeredYes">Answered Yes</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mMPITest.id">
+              <div class="d-flex">
+                <span jhiTranslate="psyhubApp.mMPIAnswer.mMPITest">M MPI Test</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mMPITestCard.id">
+              <div class="d-flex">
+                <span jhiTranslate="psyhubApp.mMPIAnswer.mMPITestCard">M MPI Test Card</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (mMPIAnswer of mMPIAnswers; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/mmpi-answer', mMPIAnswer.id, 'view']">{{ mMPIAnswer.id }}</a>
+              </td>
+              <td>{{ mMPIAnswer.answeredYes }}</td>
+              <td>
+                @if (mMPIAnswer.mMPITest) {
+                  <div>
+                    <a [routerLink]="['/mmpi-test', mMPIAnswer.mMPITest.id, 'view']">{{ mMPIAnswer.mMPITest.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (mMPIAnswer.mMPITestCard) {
+                  <div>
+                    <a [routerLink]="['/mmpi-test-card', mMPIAnswer.mMPITestCard.id, 'view']">{{ mMPIAnswer.mMPITestCard.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/mmpi-answer', mMPIAnswer.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/mmpi-answer', mMPIAnswer.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(mMPIAnswer)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (mMPIAnswers && mMPIAnswers.length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [page]="page"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  }
+</div>

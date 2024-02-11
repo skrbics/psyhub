@@ -1,0 +1,26 @@
+{
+  "annotations": {
+    "changelogDate": "20240211145749"
+  },
+  "applications": "*",
+  "entityTableName": "mmpi_feature",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "MMPIFeature",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "mMPITestCardFeature",
+      "otherEntityRelationshipName": "mMPIFeature",
+      "relationshipName": "mMPITestCardFeature",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

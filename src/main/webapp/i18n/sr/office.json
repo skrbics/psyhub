@@ -1,0 +1,29 @@
+{
+  "psyhubApp": {
+    "office": {
+      "home": {
+        "title": "Offices",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Office",
+        "createOrEditLabel": "Kreirajte ili izmenite Office",
+        "notFound": "No Offices found"
+      },
+      "created": "Kreiran je novi Office pod nazivom {{ param }}",
+      "updated": "Office pod nazivom {{ param }} je ažuriran",
+      "deleted": "Office pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Office pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Office"
+      },
+      "id": "ID",
+      "officeName": "Office Name",
+      "website": "Website",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "therapist": "Therapist"
+    }
+  }
+}

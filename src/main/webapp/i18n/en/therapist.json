@@ -1,0 +1,28 @@
+{
+  "psyhubApp": {
+    "therapist": {
+      "home": {
+        "title": "Therapists",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Therapist",
+        "createOrEditLabel": "Create or edit a Therapist",
+        "notFound": "No Therapists found"
+      },
+      "created": "A new Therapist is created with identifier {{ param }}",
+      "updated": "A Therapist is updated with identifier {{ param }}",
+      "deleted": "A Therapist is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Therapist {{ id }}?"
+      },
+      "detail": {
+        "title": "Therapist"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "userid": "Userid",
+      "office": "Office"
+    }
+  }
+}

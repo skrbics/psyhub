@@ -1,0 +1,26 @@
+{
+  "psyhubApp": {
+    "currency": {
+      "home": {
+        "title": "Currencies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Currency",
+        "createOrEditLabel": "Kreirajte ili izmenite Currency",
+        "notFound": "No Currencies found"
+      },
+      "created": "Kreiran je novi Currency pod nazivom {{ param }}",
+      "updated": "Currency pod nazivom {{ param }} je ažuriran",
+      "deleted": "Currency pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Currency pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "id": "ID",
+      "name": "Name",
+      "code": "Code",
+      "sessionBill": "Session Bill"
+    }
+  }
+}

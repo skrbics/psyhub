@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (sessionBill) {
+      <div>
+        <h2 data-cy="sessionBillDetailsHeading"><span jhiTranslate="psyhubApp.sessionBill.detail.title">Session Bill</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ sessionBill.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.sessionBill.amount">Amount</span></dt>
+          <dd>
+            <span>{{ sessionBill.amount }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.sessionBill.paid">Paid</span></dt>
+          <dd>
+            <span>{{ sessionBill.paid }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.sessionBill.currency">Currency</span></dt>
+          <dd>
+            @if (sessionBill.currency) {
+              <div>
+                <a [routerLink]="['/currency', sessionBill.currency.id, 'view']">{{ sessionBill.currency.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/session-bill', sessionBill.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

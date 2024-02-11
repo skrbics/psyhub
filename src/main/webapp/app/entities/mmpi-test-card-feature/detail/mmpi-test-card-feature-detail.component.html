@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (mMPITestCardFeature) {
+      <div>
+        <h2 data-cy="mMPITestCardFeatureDetailsHeading">
+          <span jhiTranslate="psyhubApp.mMPITestCardFeature.detail.title">MMPI Test Card Feature</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ mMPITestCardFeature.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.mMPITestCardFeature.answerYes">Answer Yes</span></dt>
+          <dd>
+            <span>{{ mMPITestCardFeature.answerYes }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.mMPITestCardFeature.mMPITestCard">M MPI Test Card</span></dt>
+          <dd>
+            @if (mMPITestCardFeature.mMPITestCard) {
+              <div>
+                <a [routerLink]="['/mmpi-test-card', mMPITestCardFeature.mMPITestCard.id, 'view']">{{
+                  mMPITestCardFeature.mMPITestCard.id
+                }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.mMPITestCardFeature.mMPIFeature">M MPI Feature</span></dt>
+          <dd>
+            @if (mMPITestCardFeature.mMPIFeature) {
+              <div>
+                <a [routerLink]="['/mmpi-feature', mMPITestCardFeature.mMPIFeature.id, 'view']">{{ mMPITestCardFeature.mMPIFeature.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/mmpi-test-card-feature', mMPITestCardFeature.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

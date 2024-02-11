@@ -1,0 +1,29 @@
+{
+  "psyhubApp": {
+    "session": {
+      "home": {
+        "title": "Sessions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Session",
+        "createOrEditLabel": "Kreirajte ili izmenite Session",
+        "notFound": "No Sessions found"
+      },
+      "created": "Kreiran je novi Session pod nazivom {{ param }}",
+      "updated": "Session pod nazivom {{ param }} je ažuriran",
+      "deleted": "Session pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Session pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Session"
+      },
+      "id": "ID",
+      "date": "Date",
+      "location": "Location",
+      "notes": "Notes",
+      "completed": "Completed",
+      "sessionBill": "Session Bill",
+      "client": "Client"
+    }
+  }
+}

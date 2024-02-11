@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20240211145249"
+  },
+  "applications": "*",
+  "entityTableName": "session",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "completed",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Session",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "sessionBill",
+      "otherEntityRelationshipName": "session",
+      "relationshipName": "sessionBill",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "session",
+      "relationshipName": "client",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

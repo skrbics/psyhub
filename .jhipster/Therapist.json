@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20240211144849"
+  },
+  "applications": "*",
+  "entityTableName": "therapist",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userid",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Therapist",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "office",
+      "otherEntityRelationshipName": "therapist",
+      "relationshipName": "office",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

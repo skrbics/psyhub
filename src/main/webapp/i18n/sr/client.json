@@ -1,0 +1,31 @@
+{
+  "psyhubApp": {
+    "client": {
+      "home": {
+        "title": "Clients",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi Client",
+        "createOrEditLabel": "Kreirajte ili izmenite Client",
+        "notFound": "No Clients found"
+      },
+      "created": "Kreiran je novi Client pod nazivom {{ param }}",
+      "updated": "Client pod nazivom {{ param }} je ažuriran",
+      "deleted": "Client pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Client pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Client"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "session": "Session",
+      "mMPITest": "M MPI Test"
+    }
+  }
+}

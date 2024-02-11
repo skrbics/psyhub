@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20240211145349"
+  },
+  "applications": "*",
+  "entityTableName": "session_bill",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paid",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "SessionBill",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "currency",
+      "otherEntityRelationshipName": "sessionBill",
+      "relationshipName": "currency",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "session",
+      "otherEntityRelationshipName": "sessionBill",
+      "relationshipName": "session",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20240211145849"
+  },
+  "applications": "*",
+  "entityTableName": "mmpi_answer",
+  "fields": [
+    {
+      "fieldName": "answeredYes",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "MMPIAnswer",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "mMPITest",
+      "otherEntityRelationshipName": "mMPIAnswer",
+      "relationshipName": "mMPITest",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "mMPITestCard",
+      "otherEntityRelationshipName": "mMPIAnswer",
+      "relationshipName": "mMPITestCard",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

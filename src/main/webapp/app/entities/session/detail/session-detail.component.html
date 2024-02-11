@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (session) {
+      <div>
+        <h2 data-cy="sessionDetailsHeading"><span jhiTranslate="psyhubApp.session.detail.title">Session</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ session.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.session.date">Date</span></dt>
+          <dd>
+            <span>{{ session.date | formatMediumDate }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.session.location">Location</span></dt>
+          <dd>
+            <span>{{ session.location }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.session.notes">Notes</span></dt>
+          <dd>
+            <span>{{ session.notes }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.session.completed">Completed</span></dt>
+          <dd>
+            <span>{{ session.completed }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.session.sessionBill">Session Bill</span></dt>
+          <dd>
+            @if (session.sessionBill) {
+              <div>
+                <a [routerLink]="['/session-bill', session.sessionBill.id, 'view']">{{ session.sessionBill.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.session.client">Client</span></dt>
+          <dd>
+            @if (session.client) {
+              <div>
+                <a [routerLink]="['/client', session.client.id, 'view']">{{ session.client.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/session', session.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

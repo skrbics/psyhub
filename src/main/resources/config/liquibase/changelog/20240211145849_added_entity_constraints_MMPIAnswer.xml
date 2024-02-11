@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity MMPIAnswer.
+    -->
+    <changeSet id="20240211145849-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="mmpitest_id"
+                                 baseTableName="mmpi_answer"
+                                 constraintName="fk_mmpi_answer__mmpitest_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mmpi_test"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="mmpitest_card_id"
+                                 baseTableName="mmpi_answer"
+                                 constraintName="fk_mmpi_answer__mmpitest_card_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mmpi_test_card"
+                                 />
+    </changeSet>
+</databaseChangeLog>

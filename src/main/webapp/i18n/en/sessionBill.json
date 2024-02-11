@@ -1,0 +1,27 @@
+{
+  "psyhubApp": {
+    "sessionBill": {
+      "home": {
+        "title": "Session Bills",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Session Bill",
+        "createOrEditLabel": "Create or edit a Session Bill",
+        "notFound": "No Session Bills found"
+      },
+      "created": "A new Session Bill is created with identifier {{ param }}",
+      "updated": "A Session Bill is updated with identifier {{ param }}",
+      "deleted": "A Session Bill is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Session Bill {{ id }}?"
+      },
+      "detail": {
+        "title": "Session Bill"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "paid": "Paid",
+      "currency": "Currency",
+      "session": "Session"
+    }
+  }
+}

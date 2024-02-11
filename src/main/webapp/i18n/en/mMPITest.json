@@ -1,0 +1,27 @@
+{
+  "psyhubApp": {
+    "mMPITest": {
+      "home": {
+        "title": "MMPI Tests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new MMPI Test",
+        "createOrEditLabel": "Create or edit a MMPI Test",
+        "notFound": "No MMPI Tests found"
+      },
+      "created": "A new MMPI Test is created with identifier {{ param }}",
+      "updated": "A MMPI Test is updated with identifier {{ param }}",
+      "deleted": "A MMPI Test is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete MMPI Test {{ id }}?"
+      },
+      "detail": {
+        "title": "MMPI Test"
+      },
+      "id": "ID",
+      "order": "Order",
+      "date": "Date",
+      "client": "Client",
+      "mMPIAnswer": "M MPI Answer"
+    }
+  }
+}

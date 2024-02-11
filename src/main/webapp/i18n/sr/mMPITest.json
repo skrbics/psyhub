@@ -1,0 +1,27 @@
+{
+  "psyhubApp": {
+    "mMPITest": {
+      "home": {
+        "title": "MMPI Tests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Kreiraj novi MMPI Test",
+        "createOrEditLabel": "Kreirajte ili izmenite MMPI Test",
+        "notFound": "No MMPI Tests found"
+      },
+      "created": "Kreiran je novi MMPI Test pod nazivom {{ param }}",
+      "updated": "MMPI Test pod nazivom {{ param }} je ažuriran",
+      "deleted": "MMPI Test pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete MMPI Test pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "MMPI Test"
+      },
+      "id": "ID",
+      "order": "Order",
+      "date": "Date",
+      "client": "Client",
+      "mMPIAnswer": "M MPI Answer"
+    }
+  }
+}

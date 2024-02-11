@@ -1,0 +1,26 @@
+{
+  "psyhubApp": {
+    "mMPIAnswer": {
+      "home": {
+        "title": "MMPI Answers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new MMPI Answer",
+        "createOrEditLabel": "Create or edit a MMPI Answer",
+        "notFound": "No MMPI Answers found"
+      },
+      "created": "A new MMPI Answer is created with identifier {{ param }}",
+      "updated": "A MMPI Answer is updated with identifier {{ param }}",
+      "deleted": "A MMPI Answer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete MMPI Answer {{ id }}?"
+      },
+      "detail": {
+        "title": "MMPI Answer"
+      },
+      "id": "ID",
+      "answeredYes": "Answered Yes",
+      "mMPITest": "M MPI Test",
+      "mMPITestCard": "M MPI Test Card"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (mMPIAnswer) {
+      <div>
+        <h2 data-cy="mMPIAnswerDetailsHeading"><span jhiTranslate="psyhubApp.mMPIAnswer.detail.title">MMPI Answer</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ mMPIAnswer.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.mMPIAnswer.answeredYes">Answered Yes</span></dt>
+          <dd>
+            <span>{{ mMPIAnswer.answeredYes }}</span>
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.mMPIAnswer.mMPITest">M MPI Test</span></dt>
+          <dd>
+            @if (mMPIAnswer.mMPITest) {
+              <div>
+                <a [routerLink]="['/mmpi-test', mMPIAnswer.mMPITest.id, 'view']">{{ mMPIAnswer.mMPITest.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="psyhubApp.mMPIAnswer.mMPITestCard">M MPI Test Card</span></dt>
+          <dd>
+            @if (mMPIAnswer.mMPITestCard) {
+              <div>
+                <a [routerLink]="['/mmpi-test-card', mMPIAnswer.mMPITestCard.id, 'view']">{{ mMPIAnswer.mMPITestCard.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/mmpi-answer', mMPIAnswer.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,143 @@
+<div>
+  <h2 id="page-heading" data-cy="MMPITestCardFeatureHeading">
+    <span jhiTranslate="psyhubApp.mMPITestCardFeature.home.title">MMPI Test Card Features</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="psyhubApp.mMPITestCardFeature.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-mmpi-test-card-feature"
+        [routerLink]="['/mmpi-test-card-feature/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="psyhubApp.mMPITestCardFeature.home.createLabel">Create a new MMPI Test Card Feature</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (mMPITestCardFeatures?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="psyhubApp.mMPITestCardFeature.home.notFound">No MMPI Test Card Features found</span>
+    </div>
+  }
+
+  @if (mMPITestCardFeatures && mMPITestCardFeatures.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="answerYes">
+              <div class="d-flex">
+                <span jhiTranslate="psyhubApp.mMPITestCardFeature.answerYes">Answer Yes</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mMPITestCard.id">
+              <div class="d-flex">
+                <span jhiTranslate="psyhubApp.mMPITestCardFeature.mMPITestCard">M MPI Test Card</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mMPIFeature.id">
+              <div class="d-flex">
+                <span jhiTranslate="psyhubApp.mMPITestCardFeature.mMPIFeature">M MPI Feature</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (mMPITestCardFeature of mMPITestCardFeatures; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/mmpi-test-card-feature', mMPITestCardFeature.id, 'view']">{{ mMPITestCardFeature.id }}</a>
+              </td>
+              <td>{{ mMPITestCardFeature.answerYes }}</td>
+              <td>
+                @if (mMPITestCardFeature.mMPITestCard) {
+                  <div>
+                    <a [routerLink]="['/mmpi-test-card', mMPITestCardFeature.mMPITestCard.id, 'view']">{{
+                      mMPITestCardFeature.mMPITestCard.id
+                    }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (mMPITestCardFeature.mMPIFeature) {
+                  <div>
+                    <a [routerLink]="['/mmpi-feature', mMPITestCardFeature.mMPIFeature.id, 'view']">{{
+                      mMPITestCardFeature.mMPIFeature.id
+                    }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/mmpi-test-card-feature', mMPITestCardFeature.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/mmpi-test-card-feature', mMPITestCardFeature.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(mMPITestCardFeature)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (mMPITestCardFeatures && mMPITestCardFeatures.length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [page]="page"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  }
+</div>
